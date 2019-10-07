@@ -4,7 +4,6 @@ import Toggle from './Toggle';
 import { useTitleInput } from './hooks/useTitleInput';
 
 const App = () => {
-  const [name, setName] = useTitleInput('');
   const ref = useRef();
 
   const { data, loading } = useAbortableFetch(
@@ -16,7 +15,7 @@ const App = () => {
   return (
     <div className="main-wrapper" ref={ref}>
       <h1 onClick={() => ref.current.classList.add('new-fake-class')}>
-        Level Up Dishes
+        Hooks & Recipes 
       </h1>
       <Toggle />
 
@@ -46,5 +45,13 @@ const App = () => {
     </div>
   );
 };
+
+function useTitleInput(initialValue) {
+  const [value, setValue] = useTitleInput('');
+  useEffect(() => {
+    document.title = value;
+  });
+  return [value, setValue];
+}
 
 export default App;
