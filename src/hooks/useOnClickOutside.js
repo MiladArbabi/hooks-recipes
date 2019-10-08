@@ -9,7 +9,7 @@ function useOnClickOutside(ref, handler) {
       handler();
     };
 
-    document.addEventListener('mousedown', listener);
+    document.addEventListener('click', listener);
     document.addEventListener('touchstart', listener);
 
     return () => {

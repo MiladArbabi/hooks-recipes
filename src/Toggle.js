@@ -8,7 +8,7 @@ const Toggle = () => {
       {isToggled ? (
         <DishForm setToggle={setToggle} />
       ) : (
-        <button onClick={() => setToggle(!isToggled)}>Toggle</button>
+        <button onClick={() => setToggle(!isToggled)}>Togg</button>
       )}
     </div>
   );
